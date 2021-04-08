@@ -41,19 +41,26 @@
         function start() {
             $(".start").hide();
             $(".question").show();
+            next();
         }
 
         $("#A").click(function(){
             var type = $("#type").val();
             var preValue = $("#"+type).val();
             $("#"+type).val(parseInt(preValue)+1);
+            next();
+        });
+
+        $("#B").click(function() {
+            next();
         });
 
         function next() {
-            $("#title").html(q[num]["tile"]);
-            $("type").val(q[num]["type"]);
-            $("#A").html(q[num]["tile"]);
-            $("#B").html(q[num]["tile"]);
+            $("#title").html(q[num]["title"]);
+            $("#type").val(q[num]["type"]);
+            $("#A").html(q[num]["A"]);
+            $("#B").html(q[num]["B"]);
+            num++;
         }
     </script>
 </body>
